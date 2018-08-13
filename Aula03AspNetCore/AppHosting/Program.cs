@@ -7,9 +7,17 @@ namespace AppHosting
 {
     class Program
     {
-        static void Main(string[] args)
+                static void Main(string[] args)
         {
             var host = new WebHostBuilder()
+                .UseKestrel()
+                .UseStartup<Startup>()
+                .Build();
+            host.Run();
+
+
+            /* implementação inicial do web hosting
+             var host = new WebHostBuilder()
                 .UseKestrel()
                 .Configure(
                     app => {
@@ -19,6 +27,7 @@ namespace AppHosting
                 )
                 .Build();
             host.Run();
+             */
         }
     }
 }
