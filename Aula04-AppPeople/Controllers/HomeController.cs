@@ -4,24 +4,15 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using AppHostingMvc.Models;
+using AppPeople.Models;
 
-namespace AppHostingMvc.Controllers
+namespace AppPeople.Controllers
 {
     public class HomeController : Controller
     {
         public IActionResult Index()
         {
-
-            var car = new CartaoDeCredito();
-            List<Gerente> gerentes = new List<Gerente>();
-            
-            gerentes.Add(new Gerente { id=1, nome = "Adri" });
-            gerentes.Add(new Gerente {id = 2, nome = "Ramon" });
-
-            return View(gerentes);
-
-
+            return View();
         }
 
         public IActionResult About()
