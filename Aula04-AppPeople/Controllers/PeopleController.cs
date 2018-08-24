@@ -37,6 +37,18 @@ namespace AppPeople.Controllers
             _repository.Delete(id);
             return RedirectToAction("Index");
         }
+
+        public IActionResult Edit(int id)
+        {
+            return View(_repository.GetById(id));
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Person person)
+        {
+            _repository.Update(person);
+            return RedirectToAction("Index");
+        }
     
     }
 }
