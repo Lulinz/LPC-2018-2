@@ -24,6 +24,7 @@ namespace AppPeople.Models
         public List<Person> GetAll()
         {
             return dataContext.People.Include(x=>x.city).ToList();
+            //return dataContext.People.ToList();
         }
         
         public void Update(Person person)

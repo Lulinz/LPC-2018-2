@@ -28,6 +28,7 @@ namespace AppPeople.Models
             
             obj.name = person.name;
             obj.address = person.address;
+            
             dataContext.SaveChanges();
         }
         public Person GetById(int id)

@@ -1,9 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
+using System;
+using System.Collections.Generic;
 
 namespace AppPeople.Migrations
 {
-    public partial class InitialMigrations : Migration
+    public partial class initialmg : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,10 +13,10 @@ namespace AppPeople.Migrations
                 name: "Person",
                 columns: table => new
                 {
-                    id = table.Column<int>(nullable: false)
+                    id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    name = table.Column<string>(nullable: true),
-                    address = table.Column<string>(nullable: true)
+                    address = table.Column<string>(type: "longtext", nullable: true),
+                    name = table.Column<string>(type: "longtext", nullable: true)
                 },
                 constraints: table =>
                 {
